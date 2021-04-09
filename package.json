@@ -1,11 +1,11 @@
 {
-	"publisher": "jsdoc",
-	"name": "jsdoc",
-	"displayName": "jsdoc",
+	"publisher": "DjonathasCardoso",
+	"name": "jsdoc-for-typescript",
+	"displayName": "JSDoc for Typescript",
 	"description": "gen jsdoc template",
-	"version": "1.0.2",
+	"version": "1.0.0",
 	"repository": {
-		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
+		"url": "https://github.com/djonathas/vscode-jsdoc.git",
 		"type": "git"
 	},
 	"engines": {
@@ -27,12 +27,17 @@
 		],
 		"configuration": [
 			{
-				"title": "jsdoc",
+				"title": "JSDoc for Typescript",
 				"properties": {
 					"jsdoc.author": {
 						"type": "string",
 						"default": "",
-						"description": "添加此选项, jsdoc 将自动插入作者"
+						"description": "Set an Author name to be inserted automatically"
+					},
+					"jsdoc.insertDate": {
+						"type": "boolean",
+						"default": "false",
+						"description": "Put true to insert the current date automatically"
 					}
 				}
 			}
