@@ -34,8 +34,8 @@ export const genJSDoc = () => {
       text += `* @date ${getFormatDate('YYYY-MM-DD', new Date())}\r`
 
     paramList.forEach(param => {
-      const paramName = param.replace(/:\s?(.*)/g, '')
-      const paramType = param.match(/:\s?(.*)/g)
+      const paramName = param.replace(/:\s?(.*)/, '')
+      const paramType = param.match(/:\s?(.*)/)
       const paramTypeString = paramType && paramType.length > 1 ? paramType[1] : 'any'
       text += `* @param {${paramTypeString}} ${paramName}\r`
     })
