@@ -32,12 +32,12 @@
 					"jsdoc.author": {
 						"type": "string",
 						"default": "",
-						"description": "Set an Author name to be inserted automatically"
+						"description": "Author name to be inserted automatically"
 					},
 					"jsdoc.insertDate": {
 						"type": "boolean",
-						"default": "false",
-						"description": "Put true to insert the current date automatically"
+						"default": false,
+						"description": "Insert the current date automatically"
 					}
 				}
 			}
