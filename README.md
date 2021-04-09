@@ -1,6 +1,6 @@
 # jsdoc README
 
-gen jsdoc
+Generate a JSDoc compatible with typescript
 
 ## How to use
 
@@ -27,7 +27,10 @@ none
 
 none
 
+### 1.2.0
+
+Add return type
 ### 1.0.0
 
-jsdoc 1.0 Officially released!
+JSDoc for Typescript 1.0 Officially released!
 

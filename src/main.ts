@@ -9,13 +9,14 @@ export const genJSDoc = () => {
 
   const selection = editor.selection
   const selectionText = editor.document.getText(selection)
-  const getParamReg = /\(([^)]*)\)/
+  const getParamReg = /\(([^)]*)\):\s?(.*[^\s])\s?{/
   const m = selectionText.match(getParamReg)
 
   if (!m) {
     return
   }
   const paramList = m[1].replace(/[\t\s\r]/g, '').split(',').filter(s => s !== '')
+  const returnType = m[2] || 'any';
 
   editor.edit(editBuilder => {
     const selectionLine = editor.document.lineAt(selection.start.line)
@@ -40,7 +41,7 @@ export const genJSDoc = () => {
       text += `* @param {${paramTypeString}} ${paramName}\r`
     })
 
-    text += `* @return {any}\r`
+    text += `* @return {${returnType}}\r`
     text += `*/\r`
 
     const whitespace = selectionLine.firstNonWhitespaceCharacterIndex

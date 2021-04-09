@@ -2,7 +2,7 @@
 	"publisher": "DjonathasCardoso",
 	"name": "jsdoc-for-typescript",
 	"displayName": "JSDoc for Typescript",
-	"description": "gen jsdoc template",
+	"description": "Generate a JSDoc compatible with typescript",
 	"version": "1.1.2",
 	"repository": {
 		"url": "https://github.com/djonathas/vscode-jsdoc.git",
