@@ -17,7 +17,8 @@ none
 
 This extension contributes the following settings:
 
-- `jsdoc.author`: Add this option to Author be inserted automatically
+- `jsdoc.author`: Author name to be inserted automatically
+- `jsdoc.insertDate`: Insert the current date automatically
 
 ## Known Issues
 

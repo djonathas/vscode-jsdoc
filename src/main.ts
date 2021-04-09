@@ -3,20 +3,22 @@ import { getFormatDate } from './date'
 
 export const genJSDoc = () => {
   const editor = vscode.window.activeTextEditor
+  const defaultType = 'any'
+
   if (!editor) {
     return
   }
 
   const selection = editor.selection
   const selectionText = editor.document.getText(selection)
-  const getParamReg = /\(([^)]*)\):\s?(.*[^\s])\s?{/
+  const getParamReg = /\(([^)]*)\):?\s?(.*[^\s])?\s?{/
   const m = selectionText.match(getParamReg)
 
   if (!m) {
     return
   }
   const paramList = m[1].replace(/[\t\s\r]/g, '').split(',').filter(s => s !== '')
-  const returnType = m[2] || 'any';
+  const returnType = m[2] || defaultType;
 
   editor.edit(editBuilder => {
     const selectionLine = editor.document.lineAt(selection.start.line)
@@ -35,9 +37,10 @@ export const genJSDoc = () => {
       text += `* @date ${getFormatDate('YYYY-MM-DD', new Date())}\r`
 
     paramList.forEach(param => {
-      const paramName = param.replace(/:\s?(.*)/, '')
-      const paramType = param.match(/:\s?(.*)/)
-      const paramTypeString = paramType && paramType.length > 1 ? paramType[1] : 'any'
+      const getParamNameReg = /:\s?(.*)/
+      const paramName = param.replace(getParamNameReg, '')
+      const paramType = param.match(getParamNameReg)
+      const paramTypeString = paramType && paramType[1] ? paramType[1] : defaultType
       text += `* @param {${paramTypeString}} ${paramName}\r`
     })
 
