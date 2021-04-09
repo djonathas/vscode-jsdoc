@@ -3,7 +3,7 @@
 	"name": "jsdoc-for-typescript",
 	"displayName": "JSDoc for Typescript",
 	"description": "Generate a JSDoc compatible with typescript",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"repository": {
 		"url": "https://github.com/djonathas/vscode-jsdoc.git",
 		"type": "git"
