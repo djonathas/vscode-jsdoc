@@ -15,14 +15,14 @@
 		"Extension Packs"
 	],
 	"activationEvents": [
-		"onCommand:extension.genJSDoc"
+		"onCommand:extension.generateJSDoc"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.genJSDoc",
-				"title": "gen jsdoc"
+				"command": "extension.generateJSDoc",
+				"title": "Generate JSDoc"
 			}
 		],
 		"configuration": [

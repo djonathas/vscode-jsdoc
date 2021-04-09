@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { getFormatDate } from './date'
 
-export const genJSDoc = () => {
+export const generateJSDoc = () => {
   const editor = vscode.window.activeTextEditor
   const defaultType = 'any'
 
@@ -17,6 +17,7 @@ export const genJSDoc = () => {
   if (!m) {
     return
   }
+
   const paramList = m[1].replace(/[\t\s\r]/g, '').split(',').filter(s => s !== '')
   const returnType = m[2] || defaultType;
 
