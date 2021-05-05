@@ -4,7 +4,7 @@ Generate a JSDoc compatible with typescript
 
 ## How to use
 
-1. Select the parameters of a function
+1. Select the entire line of a function
 2. Press `ctrl+shift+p`
 3. Type `generate jsdoc`
 4. Choose `generate jsdoc`
